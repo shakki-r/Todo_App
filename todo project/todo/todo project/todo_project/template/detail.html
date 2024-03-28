@@ -1,0 +1,38 @@
+{% extends 'base_layout.html' %}
+{% block body %}
+<div class="container mt-5 content">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center">Todo List</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                       
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <span>{{ tasks.task }}</span>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">{{ tasks.date }}</small>
+                                        <div>
+                                            <a class="badge bg-danger" style="text-decoration: none; z-index: 1;"
+                                                href="{% url 'edit' tasks.id %}">Edit</a>
+                                            <a class="badge bg-success ms-2" style="text-decoration: none; z-index: 1;"
+                                                href="{% url 'delete' tasks.id %}">Done</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #111; /* Dark background color */
+    color: #fff; /* Light text color */
+}
+
+.content {
+    flex: 1;
+}
+
+.card {
+    background-color: #333; /* Dark card background color */
+}
+
+.list-group-item {
+    background-color: #555; /* Dark list item background color */
+}
+
+.badge {
+    background-color: #dc3545; /* Dark red for badge */
+}
+
+.input-group {
+    background-color: #555; /* Dark list item background color */
+    border-top: 1px solid white; /* Bootstrap primary color for border */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Set border radius */
+    padding: 10px;
+}
+
+input.form-control {
+    border: none;
+    background-color: #fff; /* White background color */
+    color: #000; /* Dark text color */
+}
+
+input.form-control:focus {
+    box-shadow: none; /* Remove blue glow effect on focus */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Bootstrap primary color for button */
+    border-radius: 20px; /* Round border shape */
+}
+
+.btn-primary .bi {
+    margin-right: 5px;
+}
+
+/* Adjusted styling for the fixed-bottom container */
+.fixed-bottom-container {
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+}

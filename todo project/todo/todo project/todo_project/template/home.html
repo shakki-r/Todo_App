@@ -1,0 +1,86 @@
+{% extends 'base_layout.html' %}
+{% block body %}
+<!-- <h1>Todo</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" placeholder="Task" name="task">
+        <input type="text" placeholder="Priority" name="priority">
+
+        <input type="submit" value="Add">
+    </form> -->
+
+<div class="container mt-5 content">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center">Todo List</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        {% for i in tasks %}
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                   <div class="row">
+                                       <div class="col-lg-6">
+                                             <span>{{ i.task }}</span>
+                                       </div>
+                                       <div class="col-lg-6">
+                                             <span >{{ i.priority }}</span>
+
+                                       </div>
+                                   </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">{{ i.date }}</small>
+                                        <div>
+                                            <a class="badge bg-danger" style="text-decoration: none; z-index: 1;" href="{% url 'edit' i.id %}">Edit</a>
+                                            <a class="badge bg-success ms-2" style="text-decoration: none; z-index: 1;" href="{% url 'delete' i.id %}">Done</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container fixed-bottom-container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+
+                    <input type="text" class="form-control" placeholder="Add a new task" name="task" value="{{task}}">
+                    <input type="text" class="form-control" name="priority" placeholder="Priority"  value="{{priority}}">
+
+                    <input type="date" class="form-control" name="date" placeholder="Select a date" value="{{date}}">
+
+                    <input class="btn btn-primary" type="submit" value="Add">
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
