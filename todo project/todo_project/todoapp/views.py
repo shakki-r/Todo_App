@@ -33,10 +33,11 @@ def home(request):
     tasks=Task.objects.all()
     if request.method=='POST':
         task=request.POST.get('task','')
+        priority=request.POST.get('priority','')
         date=request.POST.get('date','')
        
         
-        task_add_db=Task(task=task,date=date)
+        task_add_db=Task(task=task,priority=priority,date=date)
         task_add_db.save()
    
     
@@ -57,11 +58,13 @@ def edit(request,id):
     if request.method=='POST':
         taskname=request.POST.get('task')
         date=request.POST.get('date')
+        priority=request.POST.get('priority')
         instancd_edit.task=taskname
         instancd_edit.date=date
+        instancd_edit.priority=priority
         instancd_edit.save()
         return redirect('/')
-    return render(request,'home.html',{'task':instancd_edit.task,'date':instancd_edit.date})
+    return render(request,'home.html',{'task':instancd_edit.task,'date':instancd_edit.date,'priority':instancd_edit.priority})
     
 
         

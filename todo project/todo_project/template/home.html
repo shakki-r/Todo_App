@@ -22,7 +22,15 @@
                         <li class="list-group-item">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <span>{{ i.task }}</span>
+                                   <div class="row">
+                                       <div class="col-lg-6">
+                                             <span>{{ i.task }}</span>
+                                       </div>
+                                       <div class="col-lg-6">
+                                             <span >{{ i.priority }}</span>
+
+                                       </div>
+                                   </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex justify-content-between align-items-center">
@@ -63,6 +71,7 @@
                 <div class="input-group mb-3">
 
                     <input type="text" class="form-control" placeholder="Add a new task" name="task" value="{{task}}">
+                    <input type="text" class="form-control" name="priority" placeholder="Priority"  value="{{priority}}">
 
                     <input type="date" class="form-control" name="date" placeholder="Select a date" value="{{date}}">
 
